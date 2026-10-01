@@ -1,0 +1,954 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    color: #172033;
+    line-height: 1.6;
+    background: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    transition: all 0.3s ease;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    overflow: hidden;
+    width: 280px;
+}
+
+.logo-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #0b2852;
+
+    display: inline-block;
+    white-space: nowrap;
+
+    animation: logoScroll 10s linear infinite;
+}
+
+@keyframes logoScroll {
+
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+
+}
+
+.logo-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #b18a3d;
+    margin-top: 6px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    z-index: 1000;
+}
+
+.navbar {
+    min-height: 80px;
+}
+
+.navbar-nav {
+    gap: 8px;
+}
+
+.navbar .nav-link {
+    color: #172033;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 15px !important;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Navbar Hover */
+
+.navbar .nav-link:hover {
+    color: #b18a3d;
+}
+
+
+/* Active / Hover Underline */
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 3px;
+    height: 2px;
+    background: #b18a3d;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* Bootstrap Mobile Menu Button */
+
+.navbar-toggler {
+    border: 1px solid #0b2852;
+    padding: 7px 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   ALL BUTTON COMMON
+========================================================= */
+
+.btn,
+.nav-btn,
+.whatsapp {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover,
+.nav-btn:hover,
+.whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   HEADER CONTACT BUTTON
+========================================================= */
+
+.nav-btn {
+    display: inline-block;
+    background: #0b2852;
+    color: #ffffff;
+    border: 1px solid #0b2852;
+    padding: 11px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-btn:hover {
+    background: #b18a3d;
+    color: #ffffff;
+    border-color: #b18a3d;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    background: #f4f7fb;
+    padding: 100px 0;
+}
+
+.small-title,
+.section-label {
+    color: #b18a3d;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: 54px;
+    line-height: 1.15;
+    margin: 18px 0;
+    color: #0b2852;
+}
+
+.hero h1 span {
+    display: block;
+    color: #b18a3d;
+}
+
+.hero-description {
+    max-width: 650px;
+    color: #596273;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 55%;
+}
+
+
+/* =========================================================
+   MAIN BUTTON
+========================================================= */
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+
+/* Primary */
+
+.primary {
+    background: #0b2852;
+    color: #ffffff;
+    border: 1px solid #0b2852;
+}
+
+.primary:hover {
+    background: #b18a3d;
+    color: #ffffff;
+    border-color: #b18a3d;
+}
+
+
+/* Secondary */
+
+.secondary {
+    background: transparent;
+    color: #0b2852;
+    border: 1px solid #0b2852;
+}
+
+.secondary:hover {
+    background: #0b2852;
+    color: #ffffff;
+    border-color: #0b2852;
+}
+
+
+/* =========================================================
+   HERO CARD
+========================================================= */
+
+.hero-card {
+    background: #0b2852;
+    color: #ffffff;
+    padding: 55px 40px;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.hero-card h3 {
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.hero-card p {
+    color: #dce4f0;
+    margin-top: 15px;
+}
+
+.card-line {
+    width: 60px;
+    height: 3px;
+    background: #b18a3d;
+    margin: 25px 0;
+}
+
+.service-heading {
+    font-size: 18px !important;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section {
+    padding: 90px 0;
+}
+
+.section h2 {
+    font-size: 38px;
+    color: #0b2852;
+    line-height: 1.2;
+    margin-top: 12px;
+}
+
+.about p,
+.contact-section p {
+    color: #596273;
+    margin-bottom: 18px;
+}
+
+.text-link {
+    color: #b18a3d;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.text-link:hover {
+    color: #0b2852;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-section {
+    background-image: url("../Images/WhatsApp\ Image.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.services-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.90);
+    z-index: 0;
+}
+
+.services-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.section-heading h2 {
+    margin-bottom: 15px;
+}
+
+.section-heading>p:last-child {
+    color: #596273;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 35px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border-color: #b18a3d;
+}
+
+.icon {
+    color: #b18a3d;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.service-card h3 {
+    color: #0b2852;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #667085;
+    margin-bottom: 0;
+}
+
+
+/* ================================
+   ```css
+/* ================================
+   OUR WORKERS SECTION
+================================ */
+
+.workers-section {
+    padding: 80px 0;
+    background: #f7f8fa;
+}
+
+
+/* ================================
+   SECTION HEADING
+================================ */
+
+.section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+
+.section-label {
+    color: #b18a3d;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    color: #0b2852;
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   WORKERS GRID
+   2 CARDS TOP + 2 CARDS BOTTOM
+================================ */
+
+.workers-grid {
+    display: grid;
+
+    /* 2 cards in one row */
+    grid-template-columns: repeat(2, 1fr);
+
+    /* Gap between cards */
+    column-gap: 30px;
+    row-gap: 40px;
+}
+
+
+/* ================================
+   WORKER CARD
+================================ */
+
+.worker-card {
+    background: #ffffff;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    border: 1px solid #eeeeee;
+
+    text-align: center;
+
+    transition: all 0.4s ease;
+}
+
+
+/* ================================
+   CARD HOVER
+================================ */
+
+.worker-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ================================
+   WORKER IMAGE
+================================ */
+
+.worker-image {
+    width: 100%;
+    height: 330px;
+
+    overflow: hidden;
+}
+
+.worker-image img {
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* IMAGE HOVER */
+
+.worker-card:hover .worker-image img {
+    transform: scale(1.08);
+}
+
+
+/* ================================
+   WORKER CONTENT
+================================ */
+
+.worker-content {
+    padding: 25px;
+}
+
+.worker-content h3 {
+    color: #0b2852;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+
+/* ================================
+   POSITION
+================================ */
+
+.worker-position {
+    color: #b18a3d !important;
+
+    font-weight: 600;
+
+    margin-bottom: 12px !important;
+}
+
+
+/* ================================
+   DESCRIPTION
+================================ */
+
+.worker-content p {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ================================
+   SOCIAL ICONS
+================================ */
+
+ .worker-social {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Icons ke beech LEFT-RIGHT spacing */
+.worker-social a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #0b2852;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    margin-left: 15px;
+    margin-right: 15px;
+
+    transition: all 0.3s ease;
+}
+
+
+.worker-social a:hover {
+    background: #b18a3d;
+    color: #ffffff;
+    transform: translateY(-4px);
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 992px) {
+
+    .workers-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 576px) {
+
+    .workers-section {
+        padding: 60px 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .workers-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .worker-image {
+        height: 280px;
+    }
+
+}
+
+/* ================================
+   WORKER CONTACT
+================================ */
+
+.worker-contact {
+    margin-top: 18px;
+    margin-bottom: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* Phone & Email */
+
+.worker-contact a {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #555;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Icons */
+
+.worker-contact a i {
+    color: #b18a3d;
+
+    width: 18px;
+
+    text-align: center;
+}
+
+
+/* Hover */
+
+.worker-contact a:hover {
+    color: #0b2852;
+}
+
+
+/* ================================
+   SOCIAL ICONS
+================================ */
+
+/* .worker-social {
+    margin-top: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.worker-social a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #0b2852;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.worker-social a:hover {
+    background: #b18a3d;
+
+    transform: translateY(-4px);
+} */
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    background: #0b2852;
+    color: #ffffff;
+    padding: 75px 0;
+}
+
+.cta h2 {
+    font-size: 36px;
+}
+
+.cta p {
+    margin: 15px 0 25px;
+    color: #dce4f0;
+}
+
+
+/* CTA White Button */
+
+.white {
+    background: #ffffff;
+    color: #0b2852;
+    border: 1px solid #ffffff;
+}
+
+.white:hover {
+    background: #b18a3d;
+    color: #ffffff;
+    border-color: #b18a3d;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-box p a {
+    color: #596273;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-box p a:hover {
+    color: #b18a3d;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* WhatsApp */
+
+.whatsapp {
+    display: inline-block;
+    margin-top: 15px;
+    background: #168a43;
+    color: #ffffff;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid #168a43;
+}
+
+.whatsapp:hover {
+    background: #0b2852;
+    color: #ffffff;
+    border-color: #0b2852;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #071a35;
+    color: #ffffff;
+    padding: 35px 0;
+}
+
+footer h3 {
+    font-size: 22px;
+}
+
+footer p {
+    color: #bdc7d6;
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .navbar-nav {
+        padding-top: 20px;
+    }
+
+    .navbar .nav-link {
+        padding: 10px 5px !important;
+    }
+
+    .navbar .nav-link::after {
+        left: 5px;
+        right: auto;
+        width: 35px;
+    }
+
+    .nav-btn {
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-card {
+        margin-top: 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .logo-main {
+        font-size: 21px;
+    }
+
+    .logo-sub {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-card {
+        padding: 40px 25px;
+    }
+
+    .hero-card h3 {
+        font-size: 21px;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .section h2 {
+        font-size: 32px;
+    }
+
+    .cta h2 {
+        font-size: 29px;
+    }
+
+    .contact-box {
+        padding: 30px 25px;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+
+}
